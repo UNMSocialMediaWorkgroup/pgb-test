@@ -21,7 +21,7 @@ public class SwingRenderable implements Renderable {
                 frame.pack();
 
                 frame.setDefaultCloseOperation(
-                                              WindowConstants.DISPOSE_ON_CLOSE);
+                        WindowConstants.DISPOSE_ON_CLOSE);
                 frame.setVisible(true);
             }
         });
@@ -37,5 +37,10 @@ public class SwingRenderable implements Renderable {
                 frame.repaint();
             }
         });
+    }
+
+    @Override
+    public void stop() {
+        frame.dispose();
     }
 }

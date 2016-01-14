@@ -25,10 +25,11 @@ public class MainDriver {
         // socket.disconnect();
     }
 
-    private static void run(PGBSocket socket) throws IOException, InterruptedException {
+    private static void run(PGBSocket socket) throws IOException,
+                                                     InterruptedException {
         boolean running = true;
         Screen screen = new Screen();
-        Animation anim = new Water();
+        Animation anim = new Popcorn();
         anim.setup();
 
         Renderable renderable = new TeeRenderable(
@@ -46,5 +47,7 @@ public class MainDriver {
             renderable.render(screen);
             screen.clampFramerate();
         }
+
+        renderable.stop();
     }
 }

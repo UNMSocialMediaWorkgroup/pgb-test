@@ -30,8 +30,8 @@ public class SwingRenderablePanel extends JPanel {
         g.setColor(Color.black);
         g.fillRect(0, 0, width, height);
 
-        int screenX = 0;
-        int screenY = 0;
+        int screenX;
+        int screenY;
         for (int x = 0; x < screen.getWidth(); x++) {
             screenY = x * PIXEL_SIZE;
             for (int y = 0; y < screen.getHeight(); y++) {

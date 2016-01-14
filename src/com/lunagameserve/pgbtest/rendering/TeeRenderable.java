@@ -21,4 +21,10 @@ public class TeeRenderable implements Renderable {
         a.render(screen);
         b.render(screen);
     }
+
+    @Override
+    public void stop() {
+        a.stop();
+        b.stop();
+    }
 }

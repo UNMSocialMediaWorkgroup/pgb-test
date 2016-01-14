@@ -9,4 +9,6 @@ import java.io.IOException;
  */
 public interface Renderable {
     public void render(Screen screen) throws IOException;
+
+    public void stop();
 }

@@ -26,4 +26,9 @@ public class PGBSocketRenderable implements Renderable {
             }
         }
     }
+
+    @Override
+    public void stop() {
+
+    }
 }
