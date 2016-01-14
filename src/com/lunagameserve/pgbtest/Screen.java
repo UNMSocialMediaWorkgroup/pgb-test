@@ -14,6 +14,14 @@ public class Screen {
 
     private long lastFrame = System.currentTimeMillis();
 
+    public int getHeight() {
+        return HEIGHT;
+    }
+
+    public int getWidth() {
+        return WIDTH;
+    }
+
     public interface PixelFunctor {
         int forPixel(int x, int y);
     }
@@ -47,16 +55,9 @@ public class Screen {
     }
 
     public void render(PGBSocket socket) throws IOException, InterruptedException {
-            /* Swap loop order, raster is transposed! */
-        for (int y = 0; y < HEIGHT; y++) {
-            for (int x = 0; x < WIDTH; x++) {
-                socket.writePixel(pixels[x][y]);
-            }
-        }
-        clampFramerate();
     }
 
-    private void clampFramerate() throws InterruptedException {
+    public void clampFramerate() throws InterruptedException {
         int sleepMs = (int)(((1000.0) / FPS) - (System.currentTimeMillis() - lastFrame));
         if (sleepMs > 0) {
             Thread.sleep(sleepMs);
