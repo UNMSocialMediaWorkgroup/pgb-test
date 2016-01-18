@@ -29,8 +29,11 @@ public class Chromosome {
     }
 
     public Chromosome randomize() {
+        double d;
         for (int i = 0; i < bands.length; i++) {
-            bands[i] = Paternity.rand.nextInt(MAX_VALUE + 1);
+            d = Paternity.rand.nextDouble();
+            d = d * d * d * d;
+            bands[i] = (int)(MAX_VALUE * d);
         }
         return this;
     }
