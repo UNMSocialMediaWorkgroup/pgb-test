@@ -29,7 +29,7 @@ public class MainDriver {
                                                      InterruptedException {
         boolean running = true;
         Screen screen = new Screen();
-        Animation anim = new Popcorn();
+        Animation anim = new Paternity();
         anim.setup();
 
         Renderable renderable = new TeeRenderable(
